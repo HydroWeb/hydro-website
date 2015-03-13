@@ -1,0 +1,11 @@
+// Section
+// =======
+
+.section {
+
+	@include responsive((
+		'xs': (padding: gutter('lg') gutter('sm')),
+		'sm': (padding: gutter('lg') gutter('md')),
+		'md': (padding: gutter('xl') gutter('lg'))
+	));
+}

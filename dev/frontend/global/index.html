@@ -1,0 +1,128 @@
+<!doctype html>
+<!--[if lt IE 9]>
+<html prefix="og: http://ogp.me/ns#" lang="en" class="no-js is-loading is-below-ie9">
+<![endif]--><!--[if gte IE 9]><!-->
+<html prefix="og: http://ogp.me/ns#" lang="en" class="no-js is-loading">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+	<title>HydroWeb</title>
+
+	<!--
+	  Javascript detection for styling
+	  Inlined right at the top of the document to ensure that there is no delay in detection.
+	  It sits above all other resources (in particular the stylesheet) to ensure no FOUC.
+	  -->
+
+	<script>(function(d){d.className=d.className.replace('no-js ','has-js ')}(document.documentElement))</script>
+
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<meta property="og:url" content="www.hydroweb.io">
+	<meta property="og:title" content="HydroWeb">
+	<meta property="og:type" content="website">
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="styles/app.min.css">
+
+	<!--
+	  IE8 polyfills
+	  - html5shiv: Enables support for HTML5 tags
+	  - respond.js: Enables CSS media query support for responsive websites.
+	  -->
+
+	<!--[if lte IE 8]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!--
+	  Adobe Typekit fonts
+	  -->
+
+	<script src="//use.typekit.net/zwd4fuw.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+</head>
+<body ontouchstart>
+
+
+<!--
+  Header
+  -->
+
+<header id="header">
+	<h1 class="logo">
+		<a href="#">
+			<img class="logo-symbol" src="images/logo.svg" onerror="this.onerror=null;this.src='images/logo.png'" width="29" height="36">
+			<span class="logo-hydro">Hydro</span>
+			<span class="logo-web">Web</span>
+		</a>
+	</h1>
+	<nav class="nav">
+		<ul>
+			<li><a href="#">Link</a></li>
+			<li><a href="#">Link</a></li>
+			<li><a href="#">&hellip;</a></li>
+		</ul>
+	</nav>
+</header>
+
+
+<!--
+  Hero
+  -->
+
+<article id="hero">
+	<div class="content">
+		<h1 class="title">Hero Title</h1>
+		<h2 class="tagline">Hero Tagline</h2>
+		<a class="button -context-dark -style-yellow icon-emoji-happy -side-left" href="#">Call to action</a>
+	</div>
+	<div class="bottom">
+		<a class="icon-chevron-thin-down u-2x" href="#content">
+			<span class="u-visually-hidden">To content</span>
+		</a>
+	</div>
+</article>
+
+
+<!--
+  Content
+  -->
+
+<main role="main" id="content">
+
+	<!--
+	  Text
+	  -->
+
+	<article class="section">
+		<h1>The quick brown fox jumps over the lazy dog</h1>
+		<h2>The quick brown fox jumps over the lazy dog</h2>
+		<h3>The quick brown fox jumps over the lazy dog</h3>
+		<h4>The quick brown fox jumps over the lazy dog <strong>bold</strong> <em>italic</em></h4>
+		<h5>The quick brown fox jumps over the lazy dog <strong>bold</strong> <em>italic</em></h5>
+		<h6>The quick brown fox jumps over the lazy dog</h6>
+		<p>The quick brown fox jumps over the lazy dog <strong>bold</strong> <em>italic</em></p>
+	</article>
+
+</main>
+
+
+<!--
+  Menu
+  -->
+
+<div id="fixed">
+	<ul class="bar">
+		<li class="u-hidden"><a class="button -style-yellow icon-emoji-happy -side-left" href="#">Call to action</a></li>
+		<li><button class="button -style-dark icon-menu -only-icon u-circle">Open menu</button></li>
+	</ul>
+</div>
+
+</body>
+</html>

@@ -1,7 +1,21 @@
 @import
 	'libs/hydrocss/functions',
+	'functions',
 
 	'settings',
 	'icons',
 
-	'libs/hydrocss/main';
+	'libs/hydrocss/main',
+
+	'base',
+	'util',
+
+	'components/text',
+	'components/logo',
+
+	'modules/section',
+	'modules/button',
+
+	'sections/header',
+	'sections/hero',
+	'sections/fixed';

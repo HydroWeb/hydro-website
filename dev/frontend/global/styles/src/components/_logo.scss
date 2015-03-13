@@ -1,0 +1,59 @@
+$logo-height: 64px;
+$logo-symbol-width: 29px;
+$logo-symbol-height: 36px;
+$logo-symbol-offset: -3px;
+$logo-symbol-gutter: 12px;
+$logo-font-size: 20px;
+
+.logo {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	user-select: none;
+
+	> a {
+		@extend %clearfix;
+
+		$symbol-height: $logo-symbol-height - $logo-symbol-offset;
+
+		display: block;
+		height: em($logo-height);
+		padding: em(($logo-height - $symbol-height) / 2);
+		font-size: 1em;
+		line-height: 1;
+		letter-spacing: 0;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: inherit;
+
+		> .logo-symbol,
+		> .logo-hydro,
+		> .logo-web {
+			display: block;
+			float: left;
+		}
+
+		> .logo-symbol {
+			width: em($logo-symbol-width) !important;
+			height: em($logo-symbol-height) !important;
+			margin-top: em($logo-symbol-offset);
+			margin-right: em($logo-symbol-gutter);
+		}
+
+		> .logo-hydro,
+		> .logo-web {
+			font-size: em($logo-font-size);
+			margin-top: em(($symbol-height - $logo-font-size) / 2, $logo-font-size);
+		}
+
+		> .logo-hydro {
+			font-weight: weight('proxima-nova', 'bold');
+			letter-spacing: -0.02em;
+		}
+
+		> .logo-web {
+			font-weight: weight('proxima-nova', 'light');
+		}
+	}
+}

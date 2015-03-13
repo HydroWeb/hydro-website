@@ -1,0 +1,42 @@
+#hero {
+	@include alignbox;
+
+	height: calc(100vh - #{$header-height});
+	min-height: em(520px - $header-height);
+	color: colour('white');
+	background-color: colour('darker');
+
+	> .content {
+		@include alignbox-box;
+
+		margin-top: -1em;
+
+		> .title {
+			@extend .h1;
+
+			margin: 0 0 0.25em 0;
+		}
+
+		> .tagline {
+			@extend .h4;
+
+			margin: 0 0 1.75em 0;
+		}
+	}
+
+	> .bottom {
+		@include alignbox-box(bottom);
+
+		padding-bottom: gutter('md');
+
+		> a {
+			text-decoration: none;
+			color: rgba(colour('white'), 0.15);
+
+			&:hover,
+			&:focus {
+				color: colour('white');
+			}
+		}
+	}
+}

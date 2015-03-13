@@ -9,7 +9,8 @@ module.exports = function(grunt)
 		sass: {
 			dist: {
 				options: {
-					style: 'normal'
+					style: 'normal',
+					sourcemap: 'none'
 				},
 				files: {
 					'styles/app.css' : 'styles/src/app.scss'
@@ -29,6 +30,17 @@ module.exports = function(grunt)
 			}
 		},
 
+		cssmin: {
+			options: {
+				sourceMap: true
+			},
+			target: {
+				files: {
+					'styles/app.min.css' : 'styles/app.css'
+				}
+			}
+		},
+
 		concat: {
 			options: {
 				stripBanners: true
@@ -39,7 +51,7 @@ module.exports = function(grunt)
 			}
 		},
 
-		uglifyjs: {
+		uglify: {
 			options: {
 				sourceMap: true,
 				banner: '/*! HydroWeb <%= pkg.version %> */'
@@ -55,13 +67,11 @@ module.exports = function(grunt)
 	// Load the plugins
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.renameTask('uglify', 'uglifycss');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.renameTask('uglify', 'uglifyjs');
 
 	// Default tasks
-	grunt.registerTask('CSS', ['sass', 'autoprefixer'/*, 'uglifycss'*/]);
-	grunt.registerTask('JS',  ['concat', 'uglifyjs']);
+	grunt.registerTask('CSS', ['sass', 'autoprefixer', 'cssmin']);
+	grunt.registerTask('JS',  ['concat', 'uglify']);
 };
