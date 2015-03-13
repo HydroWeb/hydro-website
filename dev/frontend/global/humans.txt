@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+HYDROWEB.IO
+
+# TEAM
+
+    Benjamin Fleming - CTO
+    Tal Meser - CEO
+    Hayden Lawson - Developer
+
+# TECHNOLOGY COLOPHON
+
+    HydroCSS/HydroJS
+    Typekit
