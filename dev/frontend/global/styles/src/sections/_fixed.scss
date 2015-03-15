@@ -1,5 +1,6 @@
 #fixed {
 	position: fixed;
+	z-index: 5;
 	top: em($header-padding);
 	right: em($header-padding);
 }

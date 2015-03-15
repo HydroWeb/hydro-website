@@ -1,0 +1,61 @@
+.selector {
+	@extend %clearfix;
+
+	$height: 52px;
+	$font-size: 20px;
+	$border: 2px;
+	$v-padding: (($height - $font-size) / 2) - $border;
+	$h-padding: $v-padding * 1.25;
+
+	padding: em($border) 0 0 em($border);
+
+	> label {
+
+		@include button(
+			$inline: false,
+			$font-size: em($font-size),
+			$padding: em($v-padding, $font-size) em($h-padding, $font-size),
+			$border-width: em($border),
+			$icon-placement: true,
+			$icon-size: em($icon-size, $font-size)
+		);
+
+		position: relative;
+		width: auto;
+		float: left;
+		margin: em(-$border) 0 0 em(-$border);
+		background-clip: padding-box;
+		text-align: center;
+		font-family: font('proxima-nova');
+		font-weight: weight('proxima-nova', 'regular');
+		letter-spacing: -0.02em;
+		text-transform: none;
+		text-decoration: none;
+		color: colour('dark');
+		background-color: transparent;
+		border-style: solid;
+		border-color: colour('light');
+		transition:
+			color $transition,
+			background-color $transition,
+			border-color $transition;
+
+		&:hover,
+		&:focus {
+			color: colour('lightblue');
+			border-color: colour('lightblue');
+			z-index: 1;
+		}
+
+		@include state('checked') {
+			color: colour('darker');
+			background-color: colour('lightblue');
+			border-color: colour('lightblue');
+			z-index: 2;
+		}
+
+		input {
+			display: none;
+		}
+	}
+}

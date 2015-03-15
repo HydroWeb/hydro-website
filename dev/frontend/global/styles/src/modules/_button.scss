@@ -5,15 +5,21 @@
 	$height: 64px;
 	$font-size: 20px;
 	$border: 2px;
-	$padding: (($height - $font-size) / 2) - $border;
+	$h-padding: 24px;
+	$v-padding: (($height - $font-size) / 2) - $border;
 
 	@include button(
 		$font-size: em($font-size),
-		$padding: em($padding, $font-size),
+		$padding: em($v-padding, $font-size) em($h-padding, $font-size),
 		$border-width: em($border),
 		$icon-placement: true,
 		$icon-size: em($icon-size, $font-size)
 	);
+
+	@include parameter('only-icon') {
+		padding-left: em($v-padding, $font-size) + em($icon-size, $font-size);
+		padding-right: em($v-padding, $font-size);
+	}
 
 	font-family: font('proxima-nova');
 	font-weight: weight('proxima-nova', 'semibold');
@@ -86,6 +92,20 @@
 		color: colour('light');
 		background-color: colour('darker');
 		border-color: colour('darker');
+	}
+
+	@include parameter('context', 'dark') {
+
+		&:hover,
+		&:focus {
+			background-color: colour('mid');
+			border-color: colour('mid');
+		}
+
+		&:active {
+			background-color: colour('darker');
+			border-color: colour('darker');
+		}
 	}
 }
 

@@ -1,0 +1,143 @@
+html#{feature('js')} .float-label {
+	$height: 52px;
+	$font-size: 20px;
+	$border: 2px;
+	$h-padding: 24px;
+	$v-padding: (($height - $font-size - $border) / 2);
+	$v-shift: 0.5;
+	$label-scale: 0.6;
+	$label-transition: 0.35s;
+
+	position: relative;
+
+	> label {
+		position: absolute;
+		top: 50%;
+		margin-top: -0.5em;
+		left: em($h-padding, $font-size);
+		font-family: font('proxima-nova');
+		font-size: em($font-size);
+		font-weight: weight('proxima-nova', 'regular');
+		line-height: 1;
+		letter-spacing: -0.02em;
+		text-transform: none;
+		text-decoration: none;
+		color: colour('light');
+		cursor: text;
+		pointer-events: none;
+		transform-origin: left top;
+		transition: transform $label-transition;
+	}
+
+	> input {
+
+		@include field(
+			$font-size: em($font-size),
+			$padding:
+				em($v-padding, $font-size) * (1 + $v-shift)
+				em($h-padding, $font-size)
+				em($v-padding, $font-size) * (1 - $v-shift)
+				em($h-padding, $font-size),
+			$border-width: 0 0 em($border) 0
+		);
+
+		font-family: font('proxima-nova');
+		font-weight: weight('proxima-nova', 'regular');
+		letter-spacing: -0.02em;
+		text-transform: none;
+		text-decoration: none;
+		color: colour('darker');
+		background-color: color('white');
+		border-style: solid;
+		border-color: colour('light');
+		transition: border-color $transition;
+
+		&::-webkit-input-placeholder {
+			line-height: 1.2;
+			visibility: visible !important;
+			color: colour('light');
+			opacity: 0;
+			transition: opacity $label-transition;
+		}
+
+		&::-moz-placeholder {
+			visibility: visible !important;
+			color: colour('light');
+			opacity: 0;
+			transition: opacity $label-transition;
+		}
+
+		&:-ms-input-placeholder {
+			color: transparent;
+		}
+
+		&:invalid {
+			box-shadow: none; // Remove default red glow in Firefox
+		}
+	}
+
+	&#{state('focused')},
+	&#{state('filled')} {
+
+		> label {
+			transform: scale($label-scale) translateY(-75%);
+		}
+	}
+
+	@include state('focused') {
+
+		> input {
+			border-color: colour('darker');
+
+			&::-webkit-input-placeholder {
+				opacity: 1;
+			}
+
+			&::-moz-placeholder {
+				opacity: 1;
+			}
+		}
+	}
+
+	@include state('filled') {
+
+		> input {
+
+			&::-webkit-input-placeholder {
+				//visibility: hidden !important;
+				opacity: 0;
+			}
+
+			&::-moz-placeholder {
+				//visibility: hidden !important;
+				opacity: 0;
+			}
+
+			&:invalid {
+				border-color: colour('lightred');
+			}
+		}
+	}
+
+	@include featureless('transform') {
+
+		> label {
+			transition:
+				font-size $label-transition,
+				top $label-transition,
+				left $label-transition;
+		}
+
+		&#{state('focused')},
+		&#{state('filled')} {
+
+			> label {
+				$font-size: $font-size * $label-scale;
+
+				font-size: em($font-size);
+				top: 25%;
+				left: em($h-padding, $font-size);
+			}
+		}
+	}
+}

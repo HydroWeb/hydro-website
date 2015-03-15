@@ -1,0 +1,152 @@
+// Network Button
+// ==============
+
+.network-button {
+	$height: 52px;
+	$font-size: 20px;
+	$border: 2px;
+	$v-padding: (($height - $font-size) / 2) - $border;
+	$h-padding: $v-padding * 1.25;
+
+	@include button(
+		$inline: false,
+		$font-size: em($font-size),
+		$padding: em($v-padding, $font-size) em($h-padding, $font-size),
+		$border-width: em($border),
+		$icon-placement: true,
+		$icon-size: em($icon-size, $font-size)
+	);
+
+	background-clip: padding-box;
+	text-align: center;
+	font-family: font('proxima-nova');
+	font-weight: weight('proxima-nova', 'semibold');
+	letter-spacing: -0.02em;
+	text-transform: none;
+	text-decoration: none;
+	color: colour('light');
+	background-color: transparent;
+	border-style: solid;
+	border-color: transparent;
+	transition:
+		color $transition,
+		background-color $transition,
+		border-color $transition;
+
+	> .name {
+		font-weight: weight('proxima-nova', 'light');
+		color: colour('white');
+		transition: inherit;
+	}
+
+	@include state('selected') {
+		border-color: colour('mid');
+	}
+
+	&:hover,
+	&:focus {
+		color: colour('mid');
+		background-color: colour('white');
+		border-color: colour('white');
+
+		> .name {
+			color: colour('darker');
+		}
+	}
+
+	&:active {
+		color: colour('mid');
+		background-color: colour('dark');
+		border-color: colour('dark');
+	}
+
+	@include parameter('style', 'blue') {
+
+		> .name {
+			color: colour('blue');
+		}
+
+		&:hover,
+		&:focus {
+			color: colour('white');
+			background-color: colour('blue');
+			border-color: colour('blue');
+
+			> .name {
+				color: colour('darker');
+			}
+		}
+	}
+
+	@include parameter('style', 'green') {
+
+		> .name {
+			color: colour('green');
+		}
+
+		&:hover,
+		&:focus {
+			color: colour('white');
+			background-color: colour('green');
+			border-color: colour('green');
+
+			> .name {
+				color: colour('darker');
+			}
+		}
+	}
+
+	@include parameter('style', 'yellow') {
+
+		> .name {
+			color: colour('yellow');
+		}
+
+		&:hover,
+		&:focus {
+			color: colour('white');
+			background-color: colour('yellow');
+			border-color: colour('yellow');
+
+			> .name {
+				color: colour('darker');
+			}
+		}
+	}
+
+	@include parameter('style', 'orange') {
+
+		> .name {
+			color: colour('orange');
+		}
+
+		&:hover,
+		&:focus {
+			color: colour('white');
+			background-color: colour('orange');
+			border-color: colour('orange');
+
+			> .name {
+				color: colour('darker');
+			}
+		}
+	}
+
+	@include parameter('style', 'red') {
+
+		> .name {
+			color: colour('red');
+		}
+
+		&:hover,
+		&:focus {
+			color: colour('white');
+			background-color: colour('red');
+			border-color: colour('red');
+
+			> .name {
+				color: colour('darker');
+			}
+		}
+	}
+}

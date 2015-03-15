@@ -1,15 +1,17 @@
 #hero {
+	@extend %section;
 	@include alignbox;
 
-	height: calc(100vh - #{$header-height});
-	min-height: em(520px - $header-height);
+	height: em(720px);
+	height: 100vh;
+	min-height: em(520px);
+	max-height: em(1600px);
 	color: colour('white');
 	background-color: colour('darker');
+	transition: height 0.25s;
 
 	> .content {
 		@include alignbox-box;
-
-		margin-top: -1em;
 
 		> .title {
 			@extend .h1;

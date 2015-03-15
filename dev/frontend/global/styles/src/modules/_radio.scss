@@ -1,0 +1,58 @@
+.radio {
+	$size: 34px;
+	$radio-size: 16px;
+
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: em($size);
+	height: em($size);
+	border: em(2px) solid colour('light');
+	color: colour('light');
+	background-color: colour('white');
+	border-radius: 50%;
+	transition:
+		color $transition,
+		border-color $transition;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: em($radio-size);
+		height: em($radio-size);
+		top: 50%;
+		left: 50%;
+		margin-top: em(-$radio-size / 2);
+		margin-left: em(-$radio-size / 2);
+		border-radius: 50%;
+		background-color: transparent;
+		transform: scale(0);
+		transition:
+			background-color $transition,
+			transform $transition;
+	}
+
+	> input {
+		display: none;
+	}
+
+	&:hover,
+	&:focus {
+
+		&:before {
+			background-color: colour('light');
+			transform: scale(0.8);
+		}
+	}
+
+	@include state('checked') {
+		color: colour('lightblue');
+		border-color: colour('lightblue');
+
+		&:before {
+			background-color: colour('lightblue');
+			transform: scale(1);
+		}
+	}
+}
