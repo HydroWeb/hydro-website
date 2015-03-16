@@ -47,7 +47,8 @@ html#{feature('js')} .float-label {
 		text-transform: none;
 		text-decoration: none;
 		color: colour('darker');
-		background-color: color('white');
+		// background-color: color('white');
+		background-color: transparent;
 		border-style: solid;
 		border-color: colour('light');
 		transition: border-color $transition;
@@ -55,16 +56,21 @@ html#{feature('js')} .float-label {
 		&::-webkit-input-placeholder {
 			line-height: 1.2;
 			visibility: visible !important;
-			color: colour('light');
+			// color: colour('light');
+			// Use the follow colour instead as it closely matches the colour of 'light' when
+			// placed over a white background with that opacity. This is because the placeholder
+			// will appear over any typed text, and as the placeholder fades out this will look
+			// jarring when initially typing (if using a solid colour). Using a faded dark
+			// colour will allow it to blend seamlessly with the text, eliminating that jarring
+			// effect.
+			color: rgba(43, 80, 130, 0.25);
 			opacity: 0;
 			transition: opacity $label-transition;
 		}
 
 		&::-moz-placeholder {
-			visibility: visible !important;
 			color: colour('light');
 			opacity: 0;
-			transition: opacity $label-transition;
 		}
 
 		&:-ms-input-placeholder {
@@ -104,12 +110,10 @@ html#{feature('js')} .float-label {
 		> input {
 
 			&::-webkit-input-placeholder {
-				//visibility: hidden !important;
 				opacity: 0;
 			}
 
 			&::-moz-placeholder {
-				//visibility: hidden !important;
 				opacity: 0;
 			}
 
@@ -137,6 +141,45 @@ html#{feature('js')} .float-label {
 				font-size: em($font-size);
 				top: 25%;
 				left: em($h-padding, $font-size);
+			}
+		}
+	}
+
+	@include parameter('style', 'dark') {
+
+		> label {
+			color: colour('mid');
+		}
+
+		> input {
+			color: colour('light');
+			// background-color: colour('darker');
+			border-color: colour('mid');
+
+			&::-webkit-input-placeholder {
+				// color: colour('mid');
+				color: rgba(198, 207, 274, 0.25);
+			}
+
+			&::-moz-placeholder {
+				color: colour('mid');
+			}
+		}
+
+		@include state('focused') {
+
+			> input {
+				border-color: colour('light');
+			}
+		}
+
+		@include state('filled') {
+
+			> input {
+
+				&:invalid {
+					border-color: colour('red');
+				}
 			}
 		}
 	}

@@ -2982,7 +2982,8 @@ This is not a necessary addition to the framework but it would be nice to have.
 html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  color: #2b3345; }
+  color: #2b3345;
+  background-color: #2b3345; }
 
 hr {
   margin: 1em 0;
@@ -3090,7 +3091,7 @@ h5, .h5 {
 h5 {
   margin: 1em 0; }
 
-h6, .h6, #header > .nav > ul > li > a, #footer .credits {
+h6, .h6, #header > .nav > ul > li > a, #footer .credits, #menu ul > li > a {
   font-family: "proxima-nova", sans-serif;
   font-weight: 600;
   font-size: 0.8em;
@@ -3127,6 +3128,7 @@ p {
           user-select: none; }
 .logo > a {
   display: block;
+  width: 8.8em;
   height: 3.2em;
   padding: 0.625em;
   font-size: 1em;
@@ -3161,6 +3163,8 @@ p {
   .section, #footer, #hero {
     padding: 6.4em 3.2em; } }
 
+.section {
+  background-color: #fff; }
 .section.-style-lighter {
   background-color: #ecf0f7; }
 .section.-style-light {
@@ -3503,7 +3507,7 @@ html.has-js .float-label > input {
   text-transform: none;
   text-decoration: none;
   color: #2b3345;
-  background-color: color("white");
+  background-color: transparent;
   border-style: solid;
   border-color: #cfd6e4;
   transition: border-color 0.15s; }
@@ -3515,14 +3519,12 @@ html.has-js .float-label > input.-inline {
 html.has-js .float-label > input::-webkit-input-placeholder {
   line-height: 1.2;
   visibility: visible !important;
-  color: #cfd6e4;
+  color: rgba(43, 80, 130, 0.25);
   opacity: 0;
   transition: opacity 0.35s; }
 html.has-js .float-label > input::-moz-placeholder {
-  visibility: visible !important;
   color: #cfd6e4;
-  opacity: 0;
-  transition: opacity 0.35s; }
+  opacity: 0; }
 html.has-js .float-label > input:-ms-input-placeholder {
   color: transparent; }
 html.has-js .float-label > input:invalid {
@@ -3549,6 +3551,19 @@ html.has-js .float-label html.no-transform.is-focused > label, html.has-js .floa
   font-size: 0.6em;
   top: 25%;
   left: 2em; }
+html.has-js .float-label.-style-dark > label {
+  color: #515d77; }
+html.has-js .float-label.-style-dark > input {
+  color: #cfd6e4;
+  border-color: #515d77; }
+html.has-js .float-label.-style-dark > input::-webkit-input-placeholder {
+  color: rgba(198, 207, 255, 0.25); }
+html.has-js .float-label.-style-dark > input::-moz-placeholder {
+  color: #515d77; }
+html.has-js .float-label.-style-dark.is-focused > input {
+  border-color: #cfd6e4; }
+html.has-js .float-label.-style-dark.is-filled > input:invalid {
+  border-color: #e86693; }
 
 .checkbox {
   position: relative;
@@ -3558,7 +3573,7 @@ html.has-js .float-label html.no-transform.is-focused > label, html.has-js .floa
   height: 1.6em;
   border: 0.1em solid #cfd6e4;
   color: #cfd6e4;
-  background-color: #fff;
+  background-color: transparent;
   transition: color 0.15s, border-color 0.15s; }
 .checkbox:before {
   content: "";
@@ -3588,6 +3603,12 @@ html.has-js .float-label html.no-transform.is-focused > label, html.has-js .floa
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1); }
+.checkbox.-style-dark {
+  color: #515d77;
+  border-color: #515d77; }
+.checkbox.-style-dark.is-checked {
+  color: #58a8d0;
+  border-color: #58a8d0; }
 
 .radio {
   position: relative;
@@ -3597,7 +3618,7 @@ html.has-js .float-label html.no-transform.is-focused > label, html.has-js .floa
   height: 1.7em;
   border: 0.1em solid #cfd6e4;
   color: #cfd6e4;
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 50%;
   transition: color 0.15s, border-color 0.15s; }
 .radio:before {
@@ -3632,6 +3653,16 @@ html.has-js .float-label html.no-transform.is-focused > label, html.has-js .floa
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1); }
+.radio.-style-dark {
+  color: #515d77;
+  border-color: #515d77; }
+.radio.-style-dark:hover:before, .radio.-style-dark:focus:before {
+  background-color: #515d77; }
+.radio.-style-dark.is-checked {
+  color: #58a8d0;
+  border-color: #58a8d0; }
+.radio.-style-dark.is-checked:before {
+  background-color: #58a8d0; }
 
 .selector {
   padding: 0.1em 0 0 0.1em; }
@@ -3658,7 +3689,6 @@ html.has-js .float-label html.no-transform.is-focused > label, html.has-js .floa
   width: auto;
   float: left;
   margin: -0.1em 0 0 -0.1em;
-  background-clip: padding-box;
   text-align: center;
   font-family: "proxima-nova", sans-serif;
   font-weight: 400;
@@ -3712,15 +3742,26 @@ html.has-js .float-label html.no-transform.is-focused > label, html.has-js .floa
   z-index: 2; }
 .selector > label input {
   display: none; }
+.selector.-style-dark > label {
+  color: #cfd6e4;
+  border-color: #515d77; }
+.selector.-style-dark > label:hover, .selector.-style-dark > label:focus {
+  color: #58a8d0;
+  border-color: #58a8d0; }
+.selector.-style-dark > label.is-checked {
+  color: #2b3345;
+  background-color: #58a8d0;
+  border-color: #58a8d0; }
 
 #header {
   height: 4em;
   padding: 0.4em;
   padding-right: 4em;
-  background-color: #2b3345; }
+  background-color: #2b3345;
+  overflow: hidden; }
 #header.is-overlaying {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   background-color: transparent; }
 #header > .logo {
@@ -3824,3 +3865,38 @@ html.has-js .float-label html.no-transform.is-focused > label, html.has-js .floa
   z-index: 5;
   top: 0.4em;
   right: 0.4em; }
+
+#site {
+  position: relative;
+  z-index: 2; }
+
+#menu {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: 14em;
+  background: #202737;
+  -webkit-transform: translateX(-80%);
+      -ms-transform: translateX(-80%);
+          transform: translateX(-80%);
+  padding: 1.6em; }
+#menu:before {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 100px;
+  top: -100px;
+  left: 0;
+  right: 0;
+  background-color: #202737; }
+#menu ul {
+  margin: 0;
+  padding: 0; }
+#menu ul > li {
+  list-style: none; }
+#menu ul > li > a {
+  color: #fff; }
+#menu ul > li > a:hover, #menu ul > li > a:focus {
+  color: #58a8d0; }

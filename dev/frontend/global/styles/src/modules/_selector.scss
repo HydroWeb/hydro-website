@@ -24,7 +24,6 @@
 		width: auto;
 		float: left;
 		margin: em(-$border) 0 0 em(-$border);
-		background-clip: padding-box;
 		text-align: center;
 		font-family: font('proxima-nova');
 		font-weight: weight('proxima-nova', 'regular');
@@ -32,6 +31,7 @@
 		text-transform: none;
 		text-decoration: none;
 		color: colour('dark');
+		// background-color: colour('white');
 		background-color: transparent;
 		border-style: solid;
 		border-color: colour('light');
@@ -56,6 +56,26 @@
 
 		input {
 			display: none;
+		}
+	}
+
+	@include parameter('style', 'dark') {
+
+		> label {
+			color: colour('light');
+			border-color: colour('mid');
+
+			&:hover,
+			&:focus {
+				color: colour('blue');
+				border-color: colour('blue');
+			}
+
+			@include state('checked') {
+				color: colour('darker');
+				background-color: colour('blue');
+				border-color: colour('blue');
+			}
 		}
 	}
 }

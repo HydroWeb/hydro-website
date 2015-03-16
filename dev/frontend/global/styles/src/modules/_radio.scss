@@ -9,7 +9,8 @@
 	height: em($size);
 	border: em(2px) solid colour('light');
 	color: colour('light');
-	background-color: colour('white');
+	// background-color: colour('white');
+	background-color: transparent;
 	border-radius: 50%;
 	transition:
 		color $transition,
@@ -53,6 +54,29 @@
 		&:before {
 			background-color: colour('lightblue');
 			transform: scale(1);
+		}
+	}
+
+	@include parameter('style', 'dark') {
+		color: colour('mid');
+		// background-color: colour('darker');
+		border-color: colour('mid');
+
+		&:hover,
+		&:focus {
+
+			&:before {
+				background-color: colour('mid');
+			}
+		}
+
+		@include state('checked') {
+			color: colour('blue');
+			border-color: colour('blue');
+
+			&:before {
+				background-color: colour('blue');
+			}
 		}
 	}
 }

@@ -16,6 +16,8 @@
 .section {
 	@extend %section;
 
+	background-color: colour('white');
+
 	@include parameter('style', 'lighter') {
 		background-color: colour('lighter');
 	}

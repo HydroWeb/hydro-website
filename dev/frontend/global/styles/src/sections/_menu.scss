@@ -1,0 +1,58 @@
+// Settings
+// ========
+
+$menu-width: 280px;
+
+
+// Site wrapper
+// ============
+
+#site {
+	position: relative;
+	z-index: 2;
+}
+
+
+// Menu
+// ====
+
+#menu {
+	position: fixed;
+	z-index: 1;
+	top: 0; bottom: 0;
+	left: 100%;
+	width: em($menu-width);
+	background: colour('darkest');
+	transform: translateX(-80%);
+	padding: gutter('md');
+
+	&:before {
+		content: '';
+		position: absolute;
+		display: block;
+		height: 100px;
+		top: -100px;
+		left: 0; right: 0;
+		background-color: colour('darkest');
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+
+		> li {
+			list-style: none;
+
+			> a {
+				@extend .h6;
+
+				color: colour('white');
+
+				&:hover,
+				&:focus {
+					color: colour('blue');
+				}
+			}
+		}
+	}
+}

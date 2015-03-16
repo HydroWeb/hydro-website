@@ -8,10 +8,11 @@ $header-padding: 8px;
 	padding: em($header-padding);
 	padding-right: em($header-padding + 64px) + gutter('us');
 	background-color: colour('darker');
+	overflow: hidden;
 
 	@include state('overlaying') {
 		position: absolute;
-		z-index: 2;
+		z-index: 3;
 		width: 100%;
 		background-color: transparent;
 	}

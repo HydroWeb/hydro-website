@@ -57,7 +57,11 @@
 <header id="header" class="is-overlaying">
 	<h1 class="logo">
 		<a href="#">
-			<img class="logo-symbol" src="images/logo.svg" onerror="this.onerror=null;this.src='images/logo.png'" width="29" height="36">
+			<!--[if lte IE 8]>
+			<img class="logo-symbol" src="images/logo.png" width="29" height="36">
+			<![endif]--><!--[if gt IE 8]><!-->
+			<img class="logo-symbol" src="images/logo.svg" width="29" height="36">
+			<!--<![endif]-->
 			<span class="logo-hydro">Hydro</span>
 			<span class="logo-web">Web</span>
 		</a>
@@ -73,204 +77,279 @@
 
 
 <!--
-  Hero
-  Hide the content link for screen readers as it's unnecessary
+  Site
+  Wrapping element for the side menu
   -->
 
-<article id="hero">
-	<div class="content">
-		<h1 class="title">Hero Title</h1>
-		<h2 class="tagline">Hero Tagline</h2>
-		<a class="button -context-dark -style-yellow icon-emoji-happy -side-left" href="#">Call to action</a>
-	</div>
-	<div class="bottom">
-		<a class="icon-chevron-thin-down u-2x" href="#content" aria-hidden="true"></a>
-	</div>
-</article>
-
-
-<!--
-  Content
-  -->
-
-<main role="main" id="content">
+<div id="site">
 
 	<!--
-	  Text
+	  Hero
+	  Hide the content link for screen readers as it's unnecessary
 	  -->
 
-	<article class="section -style-lighter u-v-trim">
-		<div class="container u-v-trim">
-
-			<h1>The quick brown fox jumps over the lazy dog</h1>
-			<h2>The quick brown fox jumps over the lazy dog</h2>
-			<h3>The quick brown fox jumps over the lazy dog</h3>
-			<h4>The quick brown fox jumps over the lazy dog <strong>bold</strong> <em>italic</em></h4>
-			<h5>The quick brown fox jumps over the lazy dog <strong>bold</strong> <em>italic</em></h5>
-			<h6>The quick brown fox jumps over the lazy dog</h6>
-			<p>The quick brown fox jumps over the lazy dog <strong>bold</strong> <em>italic</em></p>
-
+	<article id="hero">
+		<div class="content">
+			<h1 class="title">Hero Title</h1>
+			<h2 class="tagline">Hero Tagline</h2>
+			<a class="button -context-dark -style-yellow icon-emoji-happy -side-left" href="#">Call to action</a>
+		</div>
+		<div class="bottom">
+			<a class="icon-chevron-thin-down u-2x" href="#content" aria-hidden="true"></a>
 		</div>
 	</article>
+
 
 	<!--
-	  Control
+	  Content
 	  -->
 
-	<article class="section">
-		<div class="container u-v-trim">
+	<main role="main" id="content">
 
-			<ul class="bar -h-gap-xs -v-gap-xs">
-				<li><button class="button -style-blue icon-emoji-happy -side-left">Button</button></li>
-				<li><button class="button -style-yellow icon-emoji-happy -side-left">Button</button></li>
-				<li><button class="button -style-dark icon-emoji-happy -side-left">Button</button></li>
-				<li><button class="button icon-emoji-happy -side-left">Button</button></li>
+		<!--
+		  Text
+		  -->
+
+		<article class="section -style-lighter u-v-trim">
+			<div class="container u-v-trim">
+
+				<h1>The quick brown fox jumps over the lazy dog</h1>
+				<h2>The quick brown fox jumps over the lazy dog</h2>
+				<h3>The quick brown fox jumps over the lazy dog</h3>
+				<h4>The quick brown fox jumps over the lazy dog <strong>bold</strong> <em>italic</em></h4>
+				<h5>The quick brown fox jumps over the lazy dog <strong>bold</strong> <em>italic</em></h5>
+				<h6>The quick brown fox jumps over the lazy dog</h6>
+				<p>The quick brown fox jumps over the lazy dog <strong>bold</strong> <em>italic</em></p>
+
+			</div>
+		</article>
+
+		<!--
+		  Control
+		  -->
+
+		<article class="section">
+			<div class="container u-v-trim">
+
+				<ul class="bar -h-gap-xs -v-gap-xs">
+					<li><button class="button -style-blue icon-emoji-happy -side-left">Button</button></li>
+					<li><button class="button -style-yellow icon-emoji-happy -side-left">Button</button></li>
+					<li><button class="button -style-dark icon-emoji-happy -side-left">Button</button></li>
+					<li><button class="button icon-emoji-happy -side-left">Button</button></li>
+				</ul>
+
+				<br>
+
+				<ul class="bar -h-gap-xs -v-gap-xs">
+					<li>
+						<div class="float-label">
+							<label for="input-name">Name</label>
+							<input type="text" spellcheck="false" id="input-name" placeholder="John Doe" required>
+						</div>
+					</li>
+					<li>
+						<div class="float-label">
+							<label for="input-email">Email</label>
+							<input type="email" spellcheck="false" id="input-email" placeholder="example@gmail.com">
+						</div>
+					</li>
+				</ul>
+
+				<br>
+
+				<div>
+					<label for="input-checkbox">Checkbox:</label>
+					<input type="checkbox" class="checkbox" id="input-checkbox" checked>
+					<input type="radio" name="test" class="radio">
+					<input type="radio" name="test" class="radio">
+
+					<label>
+						<input type="checkbox" class="checkbox">
+						What's up?
+					</label>
+				</div>
+
+				<br>
+
+				<div class="selector">
+					<label>
+						Option 1
+						<input type="radio" name="option" checked>
+					</label>
+					<label>
+						Option 2
+						<input type="radio" name="option">
+					</label>
+					<label>
+						Option 3
+						<input type="radio" name="option">
+					</label>
+				</div>
+			</div>
+		</article>
+
+		<article class="section -style-dark">
+			<div class="container u-v-trim">
+
+				<ul class="bar -h-gap-xs -v-gap-xs">
+					<li><button class="button -context-dark -style-blue icon-emoji-happy -side-left">Button</button></li>
+					<li><button class="button -context-dark -style-yellow icon-emoji-happy -side-left">Button</button></li>
+					<li><button class="button -context-dark -style-dark icon-emoji-happy -side-left">Button</button></li>
+					<li><button class="button -context-dark icon-emoji-happy -side-left">Button</button></li>
+				</ul>
+
+				<br>
+
+				<ul class="bar -h-gap-xs -v-gap-xs">
+					<li>
+						<div class="float-label -style-dark">
+							<label for="input-name">Name</label>
+							<input type="text" spellcheck="false" id="input-name" placeholder="John Doe" required>
+						</div>
+					</li>
+					<li>
+						<div class="float-label -style-dark">
+							<label for="input-email">Email</label>
+							<input type="email" spellcheck="false" id="input-email" placeholder="example@gmail.com">
+						</div>
+					</li>
+				</ul>
+
+				<br>
+
+				<div>
+					<label for="input-checkbox">Checkbox:</label>
+					<input type="checkbox" class="checkbox -style-dark" id="input-checkbox" checked>
+					<input type="radio" name="test" class="radio -style-dark">
+					<input type="radio" name="test" class="radio -style-dark">
+
+					<label>
+						<input type="checkbox" class="checkbox -style-dark">
+						What's up?
+					</label>
+				</div>
+
+				<br>
+
+				<div class="selector -style-dark">
+					<label>
+						Option 1
+						<input type="radio" name="option2" checked>
+					</label>
+					<label>
+						Option 2
+						<input type="radio" name="option2">
+					</label>
+					<label>
+						Option 3
+						<input type="radio" name="option2">
+					</label>
+				</div>
+
+			</div>
+		</article>
+
+	</main>
+
+
+	<!--
+	  Footer
+	  -->
+
+	<footer id="footer">
+
+		<div class="container -width-10">
+			<ul class="network columns -h-align-center -h-gap-us -v-gap-us">
+				<li class="column -lg-2 -md-4 -sm-6">
+					<a class="network-button" href="#">
+						<span class="hydro">Hydro</span><!--
+						--><span class="name">Web</span>
+					</a>
+				</li>
+				<li class="column -lg-2 -md-4 -sm-6">
+					<a class="network-button -style-blue is-selected" href="#">
+						<span class="hydro">Hydro</span><!--
+						--><span class="name">Framework</span>
+					</a>
+				</li>
+				<li class="column -lg-2 -md-4 -sm-6">
+					<a class="network-button -style-green" href="#">
+						<span class="hydro">Hydro</span><!--
+						--><span class="name">University</span>
+					</a>
+				</li>
+				<li class="column -lg-2 -md-4 -sm-6">
+					<a class="network-button -style-yellow" href="#">
+						<span class="hydro">Hydro</span><!--
+						--><span class="name">Templates</span>
+					</a>
+				</li>
+				<li class="column -lg-2 -md-4 -sm-6">
+					<a class="network-button -style-orange" href="#">
+						<span class="hydro">Hydro</span><!--
+						--><span class="name">Studios</span>
+					</a>
+				</li>
+				<li class="column -lg-2 -md-4 -sm-6">
+					<a class="network-button -style-red" href="#">
+						<span class="hydro">Hydro</span><!--
+						--><span class="name">Platform</span>
+					</a>
+				</li>
 			</ul>
+		</div>
 
-			<br>
+		<div class="container">
+			<hr class="-context-dark">
 
-			<ul class="bar -h-gap-xs -v-gap-xs">
+			<ul class="credits bar -h-gap-sm -h-align-justify -v-gap-sm">
 				<li>
-					<div class="float-label">
-						<label for="input-name">Name</label>
-						<input type="text" spellcheck="false" id="input-name" placeholder="John Doe" required>
-					</div>
+					<ul class="bar -h-gap-sm -v-gap-us">
+						<li>&copy; 2015 Hydro Web Limited</li>
+						<li>All Rights Reserved</li>
+					</ul>
 				</li>
 				<li>
-					<div class="float-label">
-						<label for="input-email">Email</label>
-						<input type="email" spellcheck="false" id="input-email" placeholder="example@gmail.com">
-					</div>
+					<ul class="bar -h-gap-sm -v-gap-us">
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">Twitter</a></li>
+					</ul>
 				</li>
 			</ul>
-
-			<br>
-
-			<div>
-				<label for="input-checkbox">Checkbox:</label>
-				<input type="checkbox" class="checkbox" id="input-checkbox" checked>
-				<input type="radio" name="test" class="radio">
-				<input type="radio" name="test" class="radio">
-
-				<label>
-					<input type="checkbox" class="checkbox">
-					What's up?
-				</label>
-			</div>
-
-			<br>
-
-			<div class="selector">
-				<label>
-					Option 1
-					<input type="radio" name="option">
-				</label>
-				<label>
-					Option 2
-					<input type="radio" name="option">
-				</label>
-				<label>
-					Option 3
-					<input type="radio" name="option">
-				</label>
-			</div>
 		</div>
-	</article>
+	</footer>
 
-	<article class="section -style-dark">
-		<div class="container u-v-trim">
-
-			<ul class="bar -h-gap-xs -v-gap-xs">
-				<li><button class="button -context-dark -style-blue icon-emoji-happy -side-left">Button</button></li>
-				<li><button class="button -context-dark -style-yellow icon-emoji-happy -side-left">Button</button></li>
-				<li><button class="button -context-dark -style-dark icon-emoji-happy -side-left">Button</button></li>
-				<li><button class="button -context-dark icon-emoji-happy -side-left">Button</button></li>
-			</ul>
-
-		</div>
-	</article>
-
-</main>
-
-
-<!--
-  Footer
-  -->
-
-<footer id="footer">
-
-	<div class="container -width-10">
-		<ul class="network columns -h-align-center -h-gap-us -v-gap-us">
-			<li class="column -lg-2 -md-4 -sm-6">
-				<a class="network-button" href="#">
-					<span class="hydro">Hydro</span><!--
-					--><span class="name">Web</span>
-				</a>
-			</li>
-			<li class="column -lg-2 -md-4 -sm-6">
-				<a class="network-button -style-blue is-selected" href="#">
-					<span class="hydro">Hydro</span><!--
-					--><span class="name">Framework</span>
-				</a>
-			</li>
-			<li class="column -lg-2 -md-4 -sm-6">
-				<a class="network-button -style-green" href="#">
-					<span class="hydro">Hydro</span><!--
-					--><span class="name">University</span>
-				</a>
-			</li>
-			<li class="column -lg-2 -md-4 -sm-6">
-				<a class="network-button -style-yellow" href="#">
-					<span class="hydro">Hydro</span><!--
-					--><span class="name">Templates</span>
-				</a>
-			</li>
-			<li class="column -lg-2 -md-4 -sm-6">
-				<a class="network-button -style-orange" href="#">
-					<span class="hydro">Hydro</span><!--
-					--><span class="name">Studios</span>
-				</a>
-			</li>
-			<li class="column -lg-2 -md-4 -sm-6">
-				<a class="network-button -style-red" href="#">
-					<span class="hydro">Hydro</span><!--
-					--><span class="name">Platform</span>
-				</a>
-			</li>
-		</ul>
-	</div>
-
-	<div class="container">
-		<hr class="-context-dark">
-
-		<ul class="credits bar -h-gap-sm -h-align-justify -v-gap-sm">
-			<li>
-				<ul class="bar -h-gap-sm -v-gap-us">
-					<li>&copy; 2015 Hydro Web Limited</li>
-					<li>All Rights Reserved</li>
-				</ul>
-			</li>
-			<li>
-				<ul class="bar -h-gap-sm -v-gap-us">
-					<li><a href="#">Facebook</a></li>
-					<li><a href="#">Twitter</a></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
-</footer>
+</div>
 
 
 <!--
   Menu
   Place at the bottom to ensure screen readers read this last
+  -->
+
+<nav id="menu">
+	<ul>
+		<li><a href="#">Link</a></li>
+		<li><a href="#">Link</a></li>
+		<li><a href="#">&hellip;</a></li>
+	</ul>
+
+	<p class="u-text-center">
+		<a class="button -style-yellow icon-emoji-happy -side-left" href="#">Call to action</a>
+	</p>
+</nav>
+
+
+<!--
+  Fixed
+  Contains the button for opening the menu
   Hide the fixed bar for screen readers as it's unnecessary
   -->
 
-<div id="fixed" aria-hidden="true">
+<div id="fixed">
 	<ul class="bar">
 		<li class="u-hidden"><a class="button -style-yellow icon-emoji-happy -side-left" href="#">Call to action</a></li>
-		<li><button class="button -style-dark icon-menu -only-icon u-circle">Open menu</button></li>
+		<li><button id="menu-button" class="button -style-dark icon-menu -only-icon u-circle">Open menu</button></li>
 	</ul>
 </div>
 
@@ -285,7 +364,8 @@
 <!--[if lt IE 9]>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <![endif]--><!--[if gte IE 9]><!-->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+<script src="scripts/libs/jquery.min.js"></script>
 <!--<![endif]-->
 
 <script src="scripts/app.min.js"></script>

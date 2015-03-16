@@ -8,7 +8,8 @@
 	height: em($size);
 	border: em(2px) solid colour('light');
 	color: colour('light');
-	background-color: colour('white');
+	// background-color: colour('white');
+	background-color: transparent;
 	transition:
 		color $transition,
 		border-color $transition;
@@ -49,6 +50,17 @@
 		&:before {
 			opacity: 1;
 			transform: scale(1);
+		}
+	}
+
+	@include parameter('style', 'dark') {
+		color: colour('mid');
+		// background-color: colour('darker');
+		border-color: colour('mid');
+
+		@include state('checked') {
+			color: colour('blue');
+			border-color: colour('blue');
 		}
 	}
 }

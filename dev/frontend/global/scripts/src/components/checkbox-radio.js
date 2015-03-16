@@ -48,12 +48,13 @@ require(['jquery', 'util/prefixClass'], function($, prefix)
 				label.on('click', click);
 			}
 
-			input.on('check', function(e)
+			function check()
 			{
 				label.toggleClass(clsChecked, this.checked);
 				checker.toggleClass(clsChecked, this.checked);
-			});
+			}
 
-			checker.toggleClass(clsChecked, this.checked);
+			input.on('check', check);
+			check.call(input[0]);
 		});
 });
