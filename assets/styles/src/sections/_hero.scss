@@ -1,0 +1,44 @@
+#hero {
+	@extend %section;
+	@include alignbox;
+
+	height: em(720px);
+	height: 100vh;
+	min-height: em(520px);
+	max-height: em(1600px);
+	color: colour('white');
+	background-color: colour('darker');
+	transition: height 0.25s;
+
+	> .content {
+		@include alignbox-box;
+
+		> .title {
+			@extend .h1;
+
+			margin: 0 0 0.25em 0;
+		}
+
+		> .tagline {
+			@extend .h4;
+
+			margin: 0 0 1.75em 0;
+		}
+	}
+
+	> .bottom {
+		@include alignbox-box(bottom);
+
+		padding-bottom: gutter('md');
+
+		> a {
+			text-decoration: none;
+			color: rgba(colour('white'), 0.15);
+
+			&:hover,
+			&:focus {
+				color: colour('white');
+			}
+		}
+	}
+}

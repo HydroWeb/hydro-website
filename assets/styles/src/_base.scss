@@ -1,0 +1,28 @@
+// Document
+// ========
+
+html {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	color: colour('darker');
+	background-color: colour('darker');
+}
+
+
+// Components
+// ==========
+
+hr {
+	margin: 1em 0;
+	border: 0;
+	height: 2px;
+	background-color: colour('lighter');
+
+	@include parameter('context', 'dark') {
+		background-color: colour('dark');
+	}
+}
+
+label {
+	user-select: none;
+}

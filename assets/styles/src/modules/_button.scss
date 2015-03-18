@@ -1,0 +1,188 @@
+// Button
+// ======
+
+.button {
+	$height: 64px;
+	$font-size: 20px;
+	$border: 2px;
+	$h-padding: 24px;
+	$v-padding: (($height - $font-size) / 2) - $border;
+
+	@include button(
+		$font-size: em($font-size),
+		$padding: em($v-padding, $font-size) em($h-padding, $font-size),
+		$border-width: em($border),
+		$icon-placement: true,
+		$icon-size: em($icon-size, $font-size)
+	);
+
+	@include parameter('only-icon') {
+		padding-left: em($v-padding, $font-size) + em($icon-size, $font-size);
+		padding-right: em($v-padding, $font-size);
+	}
+
+	font-family: font('proxima-nova');
+	font-weight: weight('proxima-nova', 'semibold');
+	letter-spacing: -0.02em;
+	text-transform: none;
+	text-decoration: none;
+	color: colour('mid');
+	background-color: transparent;
+	border-style: solid;
+	border-color: colour('light');
+	transition:
+		color $transition,
+		background-color $transition,
+		border-color $transition;
+
+	&:hover,
+	&:focus {
+		color: colour('white');
+		background-color: colour('mid');
+		border-color: colour('mid');
+	}
+
+	&:active {
+		color: colour('light');
+		background-color: colour('darker');
+		border-color: colour('darker');
+	}
+}
+
+
+// Context Dark
+// ============
+
+.button#{parameter('context', 'dark')} {
+	color: colour('light');
+	background-color: transparent;
+	border-color: colour('mid');
+
+	&:hover,
+	&:focus {
+		color: colour('darker');
+		background-color: colour('lighter');
+		border-color: colour('lighter');
+	}
+
+	&:active {
+		color: colour('light');
+		background-color: colour('mid');
+		border-color: colour('mid');
+	}
+}
+
+
+// Button Dark
+// ===========
+
+.button#{parameter('style', 'dark')} {
+	color: colour('white');
+	background-color: colour('darker');
+	border-color: colour('darker');
+
+	&:hover,
+	&:focus {
+		color: colour('white');
+		background-color: colour('dark');
+		border-color: colour('dark');
+	}
+
+	&:active {
+		color: colour('light');
+		background-color: colour('darker');
+		border-color: colour('darker');
+	}
+
+	@include parameter('context', 'dark') {
+
+		&:hover,
+		&:focus {
+			background-color: colour('mid');
+			border-color: colour('mid');
+		}
+
+		&:active {
+			background-color: colour('darker');
+			border-color: colour('darker');
+		}
+	}
+}
+
+
+// Button Yellow
+// =============
+
+.button#{parameter('style', 'yellow')} {
+	color: colour('darker');
+	background-color: colour('lightyellow');
+	border-color: colour('lightyellow');
+
+	&:hover,
+	&:focus {
+		color: colour('darker');
+		background-color: colour('lightorange');
+		border-color: colour('lightorange');
+	}
+
+	&:active {
+		color: colour('lightyellow');
+		background-color: colour('darker');
+		border-color: colour('darker');
+	}
+
+	@include parameter('context', 'dark') {
+
+		&:hover,
+		&:focus {
+			background-color: colour('orange');
+			border-color: colour('orange');
+		}
+
+		&:active {
+			color: colour('lightyellow');
+			background-color: colour('mid');
+			border-color: colour('mid');
+		}
+	}
+}
+
+
+// Button Blue
+// ===========
+
+.button#{parameter('style', 'blue')} {
+	color: colour('darker');
+	background-color: colour('lightblue');
+	border-color: colour('lightblue');
+
+	&:hover,
+	&:focus {
+		color: colour('darker');
+		background-color: colour('lightgreen');
+		border-color: colour('lightgreen');
+	}
+
+	&:active {
+		color: colour('lightblue');
+		background-color: colour('darker');
+		border-color: colour('darker');
+	}
+
+	@include parameter('context', 'dark') {
+		background-color: colour('blue');
+		border-color: colour('blue');
+
+		&:hover,
+		&:focus {
+			background-color: colour('green');
+			border-color: colour('green');
+		}
+
+		&:active {
+			color: colour('lightblue');
+			background-color: colour('mid');
+			border-color: colour('mid');
+		}
+	}
+}

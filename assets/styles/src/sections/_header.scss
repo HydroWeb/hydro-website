@@ -1,0 +1,59 @@
+$header-height: 80px;
+$header-padding: 8px;
+
+#header {
+	@extend %clearfix;
+
+	height: em($header-height);
+	padding: em($header-padding);
+	padding-right: em($header-padding + 64px) + gutter('us');
+	background-color: colour('darker');
+	overflow: hidden;
+
+	@include state('overlaying') {
+		position: absolute;
+		z-index: 3;
+		width: 100%;
+		background-color: transparent;
+	}
+
+	> .logo {
+		float: left;
+		color: colour('white');
+	}
+
+	> .nav {
+		float: right;
+
+		> ul {
+			@extend %clearfix;
+
+			margin: 0;
+			padding: 0;
+
+			> li {
+				list-style: none;
+				float: left;
+
+				> a {
+					@extend .h6;
+
+					display: block;
+					padding: em($header-height / 2 - $header-padding - 16px / 2, 16px) em(12px, 16px);
+					line-height: 1;
+					color: colour('white');
+					transition: color $transition;
+
+					&:hover,
+					&:focus {
+						color: colour('blue');
+					}
+				}
+			}
+		}
+
+		@include under('sm') {
+			display: none;
+		}
+	}
+}

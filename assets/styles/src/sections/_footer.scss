@@ -1,0 +1,30 @@
+#footer {
+	@extend %section;
+
+	color: colour('dark');
+	background-color: colour('darker');
+
+	.credits {
+		@extend .h6;
+
+		color: colour('mid');
+
+		a {
+			color: colour('mid');
+
+			&:hover,
+			&:focus {
+				color: colour('blue');
+			}
+		}
+	}
+
+	.network {
+		margin-bottom: gutter('md');
+
+		.network-button {
+			max-width: em(300px);
+			margin: auto;
+		}
+	}
+}

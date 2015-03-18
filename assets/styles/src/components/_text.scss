@@ -1,0 +1,168 @@
+// Utilities
+// =========
+
+strong {
+	font-weight: weight('proxima-nova', 'semibold');
+}
+
+
+// Link
+// ====
+
+a {
+	color: colour('lightblue');
+	text-decoration: none;
+	transition: color $transition;
+}
+
+
+// Heading 1
+// =========
+
+h1, .h1 {
+	font-family: font('proxima-nova');
+	font-weight: weight('proxima-nova', 'regular');
+
+	@include responsive((
+		'xs': (font-size: em(38px)),
+		'sm': (font-size: em(44px)),
+		'md': (font-size: em(50px))
+	));
+
+	line-height: (56 / 50);
+	letter-spacing: -0.02em;
+	text-transform: none;
+	text-decoration: none;
+}
+
+h1 {
+	margin: 0.5em 0;
+}
+
+
+// Heading 2
+// =========
+
+h2, .h2 {
+	font-family: font('proxima-nova');
+	font-weight: weight('proxima-nova', 'semibold');
+
+	@include responsive((
+		'xs': (font-size: em(32px)),
+		'sm': (font-size: em(36px)),
+		'md': (font-size: em(40px))
+	));
+
+	line-height: (44 / 40);
+	letter-spacing: -0.02em;
+	text-transform: none;
+	text-decoration: none;
+}
+
+h2 {
+	margin: 0.5em 0;
+}
+
+
+// Heading 3
+// =========
+
+h3, .h3 {
+	font-family: font('proxima-nova');
+	font-weight: weight('proxima-nova', 'regular');
+
+	@include responsive((
+		'xs': (font-size: em(30px)),
+		'sm': (font-size: em(33px)),
+		'md': (font-size: em(36px))
+	));
+
+	line-height: (42 / 36);
+	letter-spacing: -0.02em;
+	text-transform: none;
+	text-decoration: none;
+}
+
+h3 {
+	margin: 0.5em 0;
+}
+
+
+// Heading 4
+// =========
+
+h4, .h4 {
+	font-family: font('proxima-nova');
+	font-weight: weight('proxima-nova', 'light');
+
+	@include responsive((
+		'xs': (font-size: em(28px)),
+		'sm': (font-size: em(30px))
+	));
+
+	line-height: (36 / 30);
+	letter-spacing: -0.02em;
+	text-transform: none;
+	text-decoration: none;
+}
+
+h4 {
+	margin: 0.75em 0;
+}
+
+
+// Heading 5
+// =========
+
+h5, .h5 {
+	font-family: font('proxima-nova');
+	font-weight: weight('proxima-nova', 'light');
+	font-size: em(24px);
+	line-height: (30 / 24);
+	letter-spacing: -0.02em;
+	text-transform: none;
+	text-decoration: none;
+}
+
+h5 {
+	margin: 1em 0;
+}
+
+
+// Heading 6
+// =========
+
+h6, .h6 {
+	font-family: font('proxima-nova');
+	font-weight: weight('proxima-nova', 'semibold');
+	font-size: em(16px);
+	line-height: (18 / 16);
+	letter-spacing: 0;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+h6 {
+	margin: 1.25em 0;
+}
+
+
+// Paragraph
+// =========
+
+body, .p1 {
+	font-family: font('proxima-nova');
+	font-weight: weight('proxima-nova', 'light');
+	line-height: (30 / 20);
+	letter-spacing: -0.02em;
+	text-transform: none;
+	text-decoration: none;
+}
+
+.p1 {
+	font-size: em(20px);
+}
+
+p {
+	margin: 1em 0;
+}

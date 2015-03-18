@@ -1,0 +1,74 @@
+// Base
+// ====
+
+$base-font-size: 20px;
+$base-max-width: 1920px;
+
+$base-gutters: (
+	'us': em(8px),
+	'xs': em(16px),
+	'sm': em(24px),
+	'md': em(32px),
+	'lg': em(64px),
+	'xl': em(128px)
+);
+
+$base-breakpoints: (
+	'xs': 0,
+	'sm': 600px,
+	'md': 1000px,
+	'lg': 1600px
+);
+
+$base-divisions: ();
+@for $i from 12 through 1 {
+	$base-divisions: map-merge(
+		$base-divisions,
+		($i: ($i / 12) * 100%)
+	);
+}
+
+
+// Theme
+// =====
+
+$colours: (
+	'black': #000,
+	'white': #fff,
+
+	'darkest': #202737,
+	'darker': #2b3345,
+	'dark': #353e52,
+	'mid': #515d77,
+	'light': #cfd6e4,
+	'lighter': #ecf0f7,
+
+	'blue': #58a8d0,
+	'lightblue': #75c0e6,
+	'green': #8dc0bb,
+	'lightgreen': #95d0ca,
+	'yellow': #ffc185,
+	'lightyellow': #ffc185,
+	'orange': #f18070,
+	'lightorange': #f89384,
+	'red': #e86693,
+	'lightred': #f57fa8
+);
+
+$fonts: (
+	'proxima-nova': (
+		'name': 'proxima-nova',
+		'fallback': sans-serif,
+		'weights': (
+			'thin': 100,
+			'light': 300,
+			'regular': 400,
+			'semibold': 600,
+			'bold': 700,
+			'extrabold': 800,
+			'black': 900
+		)
+	)
+);
+
+$transition: 0.15s;

@@ -1,0 +1,43 @@
+// Section
+// =======
+
+// Use a placeholder selector so other elements can extend the section without inheriting all
+// it's parameters and states.
+
+%section {
+
+	@include responsive((
+		'xs': (padding: gutter('lg') gutter('sm')),
+		'sm': (padding: gutter('lg') gutter('md')),
+		'md': (padding: gutter('xl') gutter('lg'))
+	));
+}
+
+.section {
+	@extend %section;
+
+	background-color: colour('white');
+
+	@include parameter('style', 'lighter') {
+		background-color: colour('lighter');
+	}
+
+	@include parameter('style', 'light') {
+		background-color: colour('light');
+	}
+
+	@include parameter('style', 'mid') {
+		color: colour('white');
+		background-color: colour('mid');
+	}
+
+	@include parameter('style', 'dark') {
+		color: colour('white');
+		background-color: colour('dark');
+	}
+
+	@include parameter('style', 'darker') {
+		color: colour('white');
+		background-color: colour('darker');
+	}
+}

@@ -1,0 +1,66 @@
+.checkbox {
+	$size: 32px;
+
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: em($size);
+	height: em($size);
+	border: em(2px) solid colour('light');
+	color: colour('light');
+	// background-color: colour('white');
+	background-color: transparent;
+	transition:
+		color $transition,
+		border-color $transition;
+
+	&:before {
+		@extend %icon;
+
+		content: icon('check');
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -0.5em;
+		margin-left: -0.5em;
+		opacity: 0;
+		transform: scale(0);
+		transition:
+			background-color $transition,
+			transform $transition;
+	}
+
+	> input {
+		display: none;
+	}
+
+	&:hover,
+	&:focus {
+
+		&:before {
+			opacity: 1;
+			transform: scale(0.8);
+		}
+	}
+
+	@include state('checked') {
+		color: colour('lightblue');
+		border-color: colour('lightblue');
+
+		&:before {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	@include parameter('style', 'dark') {
+		color: colour('mid');
+		// background-color: colour('darker');
+		border-color: colour('mid');
+
+		@include state('checked') {
+			color: colour('blue');
+			border-color: colour('blue');
+		}
+	}
+}

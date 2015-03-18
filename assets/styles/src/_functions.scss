@@ -1,0 +1,26 @@
+// Colour
+// ======
+
+@function colour($type) {
+	@return map-get($colours, $type);
+}
+
+
+// Font
+// ====
+
+@function font($type) {
+	$font: map-get($fonts, $type);
+	$name: map-get($font, 'name');
+	$fallback: map-get($font, 'fallback');
+
+	@return ($name, $fallback);
+}
+
+@function weight($font, $weight) {
+	$font: map-get($fonts, $font);
+	$weights: map-get($font, 'weights');
+
+	@return map-get($weights, $weight);
+}
+
