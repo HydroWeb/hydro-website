@@ -69,7 +69,7 @@ module.exports.session = {
 
    adapter: 'mongo',
    host: 'ds062097.mongolab.com',
-   port: 62087,
+   port: 62097,
    db: 'hydro-website',
    collection: 'sessions',
 
