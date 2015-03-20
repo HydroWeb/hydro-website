@@ -33,7 +33,15 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'index'
+    view: 'index',
+    'POST /thanks': 'EmailController.sendEmail',
+    'GET /signin': { view: 'user/signin' },
+    'POST /signin': 'SessionController.create',
+    'GET /signup': { view: 'user/signup' },
+    'POST /signup': 'UserController.create',
+    'GET /user/:id': { view: 'user/show/:id' },
+    'POST /logout' : 'SessionController.destroy',
+    'POST /thanks': { view: 'company/thanks'},
   }
 
   /***************************************************************************

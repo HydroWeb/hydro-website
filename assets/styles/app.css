@@ -3480,22 +3480,22 @@ html.has-js .float-label > input {
   overflow: hidden;
   text-overflow: ellipsis;
   	/*@if $font-size != $placeholder-font-size {
-  
+
   		&::-webkit-input-placeholder {
   			font-size: $placeholder-font-size;
   			// line-height ?? TODO
   		}
-  
+
   		&::-moz-placeholder {
   			font-size: $placeholder-font-size;
   			// line-height ?? TODO
   		}
-  
+
   		&:-ms-input-placeholder {
   			font-size: $placeholder-font-size;
   			// line-height ?? TODO
   		}
-  
+
   		&::placeholder {
   			font-size: $placeholder-font-size;
   			// line-height ?? TODO
@@ -3753,6 +3753,10 @@ html.has-js .float-label.-style-dark.is-filled > input:invalid {
   background-color: #58a8d0;
   border-color: #58a8d0; }
 
+#content {
+  text-align: center;
+  text-width: 50%;
+}
 #header {
   height: 4em;
   padding: 0.4em;

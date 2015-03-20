@@ -1,0 +1,18 @@
+<div class='container'>
+	<h1>
+    <%= user.name %>
+  </h1>
+	<% if (user.admin) { %>
+      <p>User is an Administrator</p>
+	<% } else { %>
+			<p>User in not an Administrator</p>
+	<% } %>
+	<h3>
+    <%= user.title %>
+  </h3>
+	<hr>
+	<h3>
+    contact: <%= user.email %>
+  </h3>
+
+</div>

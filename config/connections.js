@@ -89,4 +89,19 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
 
+/*
+// TODO - replace 'my favourite mandrill account' with actual account
+// TODO - put the API key in the .env file
+  // Mandrill
+    'my favorite mandrill account': {
+      adapter: 'sails-mandrill',
+      apiKey: process.env.MANDRILL_KEY, // the api key for your mandrill account
+      from: {
+        name: 'HydroWeb',
+        email: 'enquiries@hydroweb.co.nz'
+      }
+    }
+  };
+*/
+
 };
